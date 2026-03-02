@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: InterviewProject
+  datasource:
+    url: jdbc:mysql://localhost:3306/Dlearning
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secretKey: i2fJRzIZqlnw7jGi5zrZjSSMGW6VJjMqaTLI2eCE+63Zw7jZ14AEyi+8j5vaDBj4pc6PePqQoxjUgXHm4K2pPw==
+  valid-duration: 86400
+  refresh-duration: 86400

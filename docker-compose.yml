@@ -1,0 +1,29 @@
+version: "1"
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Dlearning
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+    networks:
+      - dlearning-network
+  myadmin-container:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: myadmin-container
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    networks:
+        - dlearning-network
+networks:
+    dlearning-network:
+        driver: bridge
